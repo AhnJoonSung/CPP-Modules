@@ -14,9 +14,8 @@ public:
 	Fixed(const int value);
 	Fixed(const float value);
 	Fixed(const Fixed &other);
-	~Fixed(void);
-
 	Fixed &operator=(const Fixed &other);
+	~Fixed(void);
 
 	bool operator>(const Fixed &other) const;
 	bool operator<(const Fixed &other) const;
