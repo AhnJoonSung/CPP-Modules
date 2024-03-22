@@ -2,11 +2,11 @@ CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 INCLUDE = .
 
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp Harl.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 
-NAME = a.out
+NAME = harl
 
 all : $(NAME)
 

@@ -6,7 +6,7 @@ SRC = main.cpp Fixed.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 
-NAME = fixed
+NAME = a.out
 
 all : $(NAME)
 

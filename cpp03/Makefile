@@ -2,7 +2,7 @@ CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 INCLUDE = .
 
-SRC = main.cpp Fixed.cpp
+SRC =
 
 OBJ = $(SRC:%.cpp=%.o)
 
