@@ -4,24 +4,37 @@
 bool cannottMove(unsigned int hp, unsigned int ep);
 void printCannotMove(const std::string &name);
 
-ClapTrap::ClapTrap(void) {}
-ClapTrap::ClapTrap(const ClapTrap &other) {}
+ClapTrap::ClapTrap(void) : name("default"), hitPoints(10), energyPoints(10), attackDamage(0)
+{
+	std::cout << "constructors called." << std::endl;
+}
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+{
+	std::cout << "constructors called." << std::endl;
+}
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->energyPoints = other.energyPoints;
+	this->attackDamage = other.attackDamage;
+}
+
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
 	if (this != &other)
 	{
-		this->name = other
+		this->name = other.name;
+		this->hitPoints = other.hitPoints;
+		this->energyPoints = other.energyPoints;
+		this->attackDamage = other.attackDamage;
 	}
 	return (*this);
 }
+
 ClapTrap::~ClapTrap(void)
 {
 	std::cout << "destructor called." << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
-{
-	std::cout << "constructors called." << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
