@@ -1,18 +1,15 @@
-#ifndef DOG_HPP
-#define DOG_HPP
+#pragma once
 
 #include "Animal.hpp"
 
 class Dog : public Animal
 {
 public:
-	Dog(void);
+	Dog();
 	Dog(const Dog &other);
 	Dog &operator=(const Dog &other);
-	~Dog(void);
+	~Dog();
 
-	void makeSound(void) const;
-	std::string getType(void) const;
+	void makeSound() const;
+	std::string getType() const;
 };
-
-#endif

@@ -10,5 +10,6 @@ int main(void)
 	for (int i = 0; i < 90; i++)
 		jooahn.beRepaired(1);
 	jooahn.highFivesGuys();
+	jooahn.guardGate();
 	jooahn.whoAmI();
 }

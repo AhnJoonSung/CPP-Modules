@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 #include <iostream>
+#include <limits>
 
 bool cannottMove(unsigned int hp, unsigned int ep);
 void printCannotMove(const std::string &name);
@@ -70,7 +71,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 		return;
 	}
 	energyPoints--;
-	hitPoints++;
+	if (hitPoints < std::numeric_limits<unsigned int>::max() - amount)
+		hitPoints += amount;
+	else
+		hitPoints = std::numeric_limits<unsigned int>::max();
 	std::cout << "ClapTrap " << name << " gets " << amount << " hit points!" << std::endl;
 }
 

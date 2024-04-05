@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 
 class Animal
@@ -10,8 +11,9 @@ public:
 	Animal();
 	Animal(const Animal &other);
 	Animal &operator=(const Animal &other);
-	~Animal();
+	virtual ~Animal();
 
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 	virtual std::string getType() const;
+	virtual void setType(std::string type);
 };

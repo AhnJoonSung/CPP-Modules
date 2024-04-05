@@ -1,5 +1,5 @@
 CPP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 INCLUDE = .
 
 SRC = main.cpp Zombie.cpp zombieHorde.cpp
@@ -14,7 +14,7 @@ $(NAME) : $(OBJ)
 	$(CPP) $^ -o $@
 
 %.o : %.cpp
-	$(CPP) $(CPPFLAGS) -I$(INCLUDE) -c $< -o $@
+	$(CPP) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
 
 clean :
 	rm -f $(OBJ)

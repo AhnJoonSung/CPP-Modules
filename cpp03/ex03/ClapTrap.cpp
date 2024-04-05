@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 #include <iostream>
+#include <limits>
 
 ClapTrap::ClapTrap(void) : name("default"), hitPoints(10), energyPoints(10), attackDamage(0)
 {
@@ -69,7 +70,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 		return;
 	}
 	energyPoints--;
-	hitPoints++;
+	if (hitPoints < std::numeric_limits<unsigned int>::max() - amount)
+		hitPoints += amount;
+	else
+		hitPoints = std::numeric_limits<unsigned int>::max();
 	std::cout << "ClapTrap " << name << " gets " << amount << " hit points!" << std::endl;
 }
 

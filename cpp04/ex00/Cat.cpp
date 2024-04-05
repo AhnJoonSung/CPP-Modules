@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 #include <iostream>
 
-Cat::Cat(void)
+Cat::Cat()
 {
 	type = "Cat";
 	std::cout << "Cat's constructor called." << std::endl;
@@ -21,17 +21,17 @@ Cat &Cat::operator=(const Cat &other)
 	return (*this);
 }
 
-Cat::~Cat(void)
+Cat::~Cat()
 {
 	std::cout << "Cat's destructor called." << std::endl;
 }
 
-void Cat::makeSound(void) const
+void Cat::makeSound() const
 {
 	std::cout << "Cat's sound." << std::endl;
 }
 
-std::string Cat::getType(void) const
+std::string Cat::getType() const
 {
 	return type;
 }

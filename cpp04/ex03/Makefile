@@ -2,7 +2,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 INCLUDE = .
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 DEPS = $(SRCS:%.cpp=%.d)
 

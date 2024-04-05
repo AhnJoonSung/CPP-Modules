@@ -1,7 +1,7 @@
 #include "Dog.hpp"
 #include <iostream>
 
-Dog::Dog(void)
+Dog::Dog()
 {
 	type = "Dog";
 	std::cout << "Dog's constructor called." << std::endl;
@@ -21,17 +21,17 @@ Dog &Dog::operator=(const Dog &other)
 	return (*this);
 }
 
-Dog::~Dog(void)
+Dog::~Dog()
 {
 	std::cout << "Dog's destructor called." << std::endl;
 }
 
-void Dog::makeSound(void) const
+void Dog::makeSound() const
 {
 	std::cout << "Dog's sound." << std::endl;
 }
 
-std::string Dog::getType(void) const
+std::string Dog::getType() const
 {
 	return type;
 }

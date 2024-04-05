@@ -1,23 +1,25 @@
-CPP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 INCLUDE = .
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
-
-OBJ = $(SRC:%.cpp=%.o)
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+OBJS = $(SRCS:.cpp=.o)
+DEPS = $(SRCS:.cpp=.d)
 
 NAME = a.out
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
-	$(CPP) $^ -o $@
+$(NAME) : $(OBJS)
+	$(CXX) $^ -o $@
 
 %.o : %.cpp
-	$(CPP) $(CPPFLAGS) -I$(INCLUDE) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -I$(INCLUDE) -c $< -o $@
+
+-include $(DEPS)
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJS) $(DEPS)
 
 fclean : clean
 	rm -f $(NAME)
