@@ -4,17 +4,9 @@
 
 Cure::Cure() { type = "cure"; }
 
-Cure::Cure(const Cure &other)
-{
-	(void)other;
-	type = "cure";
-}
+Cure::Cure(const Cure &) { type = "cure"; }
 
-const Cure &Cure::operator=(const Cure &other)
-{
-	(void)other;
-	return (*this);
-}
+const Cure &Cure::operator=(const Cure &) { return (*this); }
 
 Cure::~Cure() {}
 

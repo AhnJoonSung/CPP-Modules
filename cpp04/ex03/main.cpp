@@ -21,11 +21,6 @@ int main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 
-	// AMateria *ice = src->createMateria("ice");
-	// me->equip(ice);
-	// me->unequip(2);
-	// delete ice;
-
 	delete bob;
 	delete me;
 	delete src;

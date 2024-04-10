@@ -4,15 +4,13 @@
 
 Ice::Ice() { type = "ice"; }
 
-Ice::Ice(const Ice &other)
+Ice::Ice(const Ice &)
 {
-	(void)other;
 	type = "ice";
 }
 
-const Ice &Ice::operator=(const Ice &other)
+const Ice &Ice::operator=(const Ice &)
 {
-	(void)other;
 	return (*this);
 }
 

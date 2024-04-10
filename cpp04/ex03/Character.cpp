@@ -15,7 +15,7 @@ Character::Character(const std::string &name) : name(name)
 Character::Character(const Character &other) : name(other.name)
 {
 	for (int i = 0; i < SIZE; i++)
-		slot[i] = other.slot[i];
+		slot[i] = other.slot[i]->clone();
 }
 
 const Character &Character::operator=(const Character &other)
@@ -23,7 +23,11 @@ const Character &Character::operator=(const Character &other)
 	if (this != &other)
 	{
 		for (int i = 0; i < SIZE; i++)
-			slot[i] = other.slot[i];
+		{
+			if (slot[i])
+				delete slot[i];
+			slot[i] = other.slot[i]->clone();
+		}
 	}
 	return (*this);
 }

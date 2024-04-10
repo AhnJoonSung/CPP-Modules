@@ -1,4 +1,5 @@
 #include "MateriaSource.hpp"
+#include <iostream>
 
 MateriaSource::MateriaSource() : idx(0)
 {
@@ -9,7 +10,7 @@ MateriaSource::MateriaSource() : idx(0)
 MateriaSource::MateriaSource(const MateriaSource &other) : idx(0)
 {
 	for (int i = 0; i < SIZE; i++)
-		materias[i] = other.materias[i];
+		materias[i] = other.materias[i]->clone();
 }
 
 const MateriaSource &MateriaSource::operator=(const MateriaSource &other)
@@ -18,7 +19,11 @@ const MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 	{
 		idx = other.idx;
 		for (int i = 0; i < SIZE; i++)
-			materias[i] = other.materias[i];
+		{
+			if (materias[i])
+				delete materias[i];
+			materias[i] = other.materias[i]->clone();
+		}
 	}
 	return (*this);
 }
@@ -46,5 +51,6 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 		if (materias[i]->getType() == type)
 			return (materias[i]->clone());
 	}
+	std::cout << "Creating a Materia requires learning first." << std::endl;
 	return 0;
 }
